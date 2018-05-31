@@ -1,0 +1,8 @@
+<% @my_posts.each do |post| %>
+    <p>Title: <%= post.title %></p>
+    <p><%= post.post %> </p>
+    <p>By <%= User.find(post.user_id).username %></p>
+    <p>Posted at <%= post.created_at %></p>
+    <p>Updated at <%= post.updated_at %></p>
+<a href="/update_post/<%= post.id %>" class='btn'>Update Post</a><br>
+<% end %>

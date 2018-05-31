@@ -1,0 +1,8 @@
+<h1> all posts will be here</h1><br>
+<% @posts.each do |post| %>
+    <p>Title: <%= post.title %></p>
+    <p><%= post.post %> </p>
+    <p>By <%= User.find(post.user_id).username %></p>
+    <p>Posted at <%= post.created_at %></p>
+    <p>Updated at <%= post.updated_at %></p><br>
+<% end %>

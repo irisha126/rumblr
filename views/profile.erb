@@ -1,0 +1,25 @@
+<h3>Your info</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <ul>
+                <li>First Name</li>
+                <li>Last Name</li>
+                <li>Username</li>
+                <li>Email</li>
+                <li>Birthday</li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <ul>
+                <li><%= @user.first_name %></li>
+                <li><%= @user.last_name %></li>
+                <li><%= @user.username %></li>
+                <li><%= @user.email %></li>
+                <li><%= @user.birthday %></li>
+            </ul>
+        </div>
+        <a href="/profile/update/<%= @user.id %>"><button type='submit' class='btn-primary btn-lg btn-block'>Edit Info</button></a>
+        <a href="/profile/delete_user/<%= @user.id %>"><button type='submit' class='btn-primary btn-lg btn-block'>Delete Profile</button></a>
+    </div>
+</div>

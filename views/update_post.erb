@@ -1,0 +1,13 @@
+<p> UPDATE your post</p>
+  
+<form action='/update_post/<%= @post[:id] %>' method='post'>
+ <div class="form-group">
+    <label for="inputPostName">Post Name</label>
+    <input name='post_name' type="text" class="form-control" placeholder="Post name" value="<%= @post.title %>">
+  </div>
+  <div class="form-group">
+      <label for="post">Post:</label>
+      <textarea name="new_post" class="form-control" rows="5" id="post" ><%= @post.post %></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Update Post</button>
+    <button type="submit" class="btn btn=primary"><a href='/delete_post/<%= @post.id %>'>Delete Post</a></button>

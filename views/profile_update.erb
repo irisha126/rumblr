@@ -1,0 +1,8 @@
+<form action='/profile/update/<%= @user.id %>' method='post'>
+   <input type='text' name='first_name' value="<%= @user.first_name %>">
+   <input type='text' name='last_name' value="<%= @user.last_name %>">
+   <input type='text' name='username' value="<%= @user.username %>">
+   <input type='text' name='email' value="<%= @user.email %>">
+   <input type='date' name='birthday' value="<%= @user.birthday %>">
+   <button name='update-info' type="submit" class="btn btn-primary">Update Info</button>
+</form>

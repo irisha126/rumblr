@@ -1,0 +1,12 @@
+<p> Create your post</p>
+  
+<form action='/user_post_create' method='post' id='new_post'>
+ <div class="form-group">
+    <label for="inputPostName">Post Name</label>
+    <input name='post_name' type="text" class="form-control" placeholder="Post name">
+  </div>
+  <div class="form-group">
+      <label for="post">Post:</label>
+      <textarea name="new_post" class="form-control" rows="5" id="post"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Create Post</button>
