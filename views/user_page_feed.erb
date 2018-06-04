@@ -1,3 +1,4 @@
+<div class="container">
 <h1> all posts will be here</h1><br>
 <% @posts.each do |post| %>
     <p>Title: <%= post.title %></p>
@@ -6,3 +7,4 @@
     <p>Posted at <%= post.created_at %></p>
     <p>Updated at <%= post.updated_at %></p><br>
 <% end %>
+</div>

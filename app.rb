@@ -20,7 +20,7 @@ end
 
 
 get('/signup')do
-    @user = User.find(session[:user_id])
+#    @user = User.find(session[:user_id])
     erb(:signup) 
 end
 
@@ -61,11 +61,6 @@ post ('/login') do
     redirect('/user_page_feed')
 end
 
-#get ('/user_page_feed') do
-#  
-#    erb(:user_page_feed)
-#end
- 
 
 get ('/profile/:id') do    
     @user = User.find(session[:user_id]) if session[:user_id]
@@ -80,10 +75,7 @@ end
 
 
 post ('/profile/update/:id') do 
-    # find the user in the database by id
-    user = User.find(session[:user_id])
-    # then update their information
-    
+    user = User.find(session[:user_id]) 
     user_new = user.update(
         username: params[:username],
         first_name: params[:first_name],
@@ -116,10 +108,6 @@ get ('/user_page_feed') do
     @posts = Post.all.reverse
     erb :user_page_feed
 end
-
-#post ('/user_page_feed') do
-#  
-#end
 
 get ('/update_post/:id') do
     @user = User.find(session[:user_id])
