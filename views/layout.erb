@@ -5,66 +5,67 @@
     <title>Rumblr</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link href='/styles.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
 </head>
 <body>
    <div class="container">
-   <div class="row">
-   <div class="col-12">
-    <ul class="nav nav-tabs">
-        <% unless @user.nil? %>
-            <li class="nav-item">
-                <a class="nav-link active" href="/user_page_feed">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Post</a>
-                <div class="dropdown-menu">
-                <a class="dropdown-item" href="/user_post_create">Create new post</a>
-                <a class="dropdown-item" href="/my_posts">All my post</a>
-            </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/profile/<%= session[:user_id] %>">Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">Log Out</a>
-            </li>
-<!--
-        < else %>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/signup">Sign Up</a>
-            </li>
--->
-        <% end %>
-    </ul>
-    
-    <% flash.keys.each do |type| %>
-           <div data-alert class=“flash <%= type %> alert-box radius”>
-             <%= flash[type] %>
-             <a href='' class=“close”>&times;</a>
-           </div>
-         <% end %>
-         <%= yield %>
-         </div>
-         </div>
-         </div>
-    <footer>
-        <div class="row">
-                       <div class="col-12">
-                        <a href="/500" class='social'><img class='social' src="images/instagram.png" title="Instagram" alt="Instagram"></a>
-                        <a href="/500" class='social'><img class='social' src="images/facebook.png" title="Facebook" alt="Facebook"></a>
-                        <a href="/500" class='social'><img class='social' src="images/twitter.png" title="Twitter" alt="Twitter"></a>
-                       </div>
-                  
-                       <div class="copyright">
-            &copy;2018 Rumblr Inc.
-        
-                </div>
+       <div class="row">
+           <div class="col-12">
+               
+                <ul class="nav nav-tabs">
+                   
+                    <% unless @user.nil? %>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/user_page_feed">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Post</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/user_post_create">Create new post</a>
+                                    <a class="dropdown-item" href="/my_posts">All my post</a>
+                                </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile/<%= session[:user_id] %>">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log Out</a>
+                        </li>
+           
+                    <% end %>
                     
-                      </div>
-    </footer>
+                </ul>
+
+                <% flash.keys.each do |type| %>
+                    <div data-alert class=“flash <%= type %> alert-box radius”>
+                        <%= flash[type] %>
+                        <a href='' class=“close”>&times;</a>
+                    </div>
+                <% end %>
+                
+                <%= yield %>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class='footer'>
+       
+        <div class="row">
+            <div class="col-12">
+                <a href="/500" class='social'><img class='social' src="/images/instagram.png" title="Instagram" alt="Instagram"></a>
+                <a href="/500" class='social'><img class='social' src="/images/facebook.png" title="Facebook" alt="Facebook"></a>
+                <a href="/500" class='social'><img class='social' src="/images/twitter.png" title="Twitter" alt="Twitter"></a>
+            </div>
+                  
+            <div class="copyright">
+                &copy;2018 Rumblr Inc.
+            </div>
+                    
+        </div>
+        
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>

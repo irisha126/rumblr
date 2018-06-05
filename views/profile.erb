@@ -1,15 +1,33 @@
 <div class="container">
-   <h3>Your info</h3>
+    <h3>Your info</h3>
     <div class="row">
+        
         <div class="col-6">
-            <ul>
-                <li>First Name</li>
-                <li>Last Name</li>
-                <li>Username</li>
-                <li>Email</li>
-                <li>Birthday</li>
-            </ul>
+           <div class="row profile-info">
+               <div class="col-6 info">
+                    <ul>
+                        <li><strong>First Name: </strong></li>
+                        <li><strong>Last Name: </strong></li>
+                        <li><strong>Username: </strong></li>
+                        <li><strong>Email: </strong></li>
+                        <li><strong>Birthday: </strong></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><%= @user.first_name %></li>
+                        <li><%= @user.last_name %></li>
+                        <li><%= @user.username %></li>
+                        <li><%= @user.email %></li>
+                        <li><%= @user.birthday %></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        <div class='col-6 annoyed-div'>
+            <img class='annoyed' src='/images/annoyed.jpg'>
+        </div>
+<!--
         <div class="col-6">
             <ul>
                 <li><%= @user.first_name %></li>
@@ -19,7 +37,8 @@
                 <li><%= @user.birthday %></li>
             </ul>
         </div>
-        <a href="/profile/update/<%= @user.id %>"><button type='submit' class='btn-primary btn-lg btn-block'>Edit Info</button></a>
-        <a href="/profile/delete_user/<%= @user.id %>"><button type='submit' class='btn-primary btn-lg btn-block'>Delete Profile</button></a>
-    </div>
+--></div>
+        <a class='edit' href="/profile/update/<%= @user.id %>"><button type='submit' class='btn-primary btn-lg btn-block'>Edit Info</button></a>
+        <a class='edit' href="/profile/delete_user/<%= @user.id %>"><button type='submit' class='btn-primary btn-lg btn-block'>Delete Profile</button></a>
+    
 </div>

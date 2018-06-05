@@ -1,10 +1,13 @@
+
 <div class="container">
-<h1> all posts will be here</h1><br>
-<% @posts.each do |post| %>
-    <p>Title: <%= post.title %></p>
-    <p><%= post.post %> </p>
-    <p>By <%= User.find(post.user_id).username %></p>
-    <p>Posted at <%= post.created_at %></p>
-    <p>Updated at <%= post.updated_at %></p><br>
-<% end %>
+    <h1> Recent stories</h1><br>
+    <% @posts.each do |post| %>
+        <p>By <%= User.find(post.user_id).username %></p>
+        <p class='title'><strong><%= post.title %></strong></p>
+        <div class='post'>
+            <p class='post-text'><%= post.post %> </p>
+            <p class='posted'>Posted at <%= post.created_at %></p>
+            <p class='updated'>Updated at <%= post.updated_at %></p><br>
+        </div>
+    <% end %>
 </div>

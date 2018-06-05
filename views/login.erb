@@ -1,13 +1,16 @@
 <div class="container">
-   <form action='/login' method='post'>
-    <div class="form-group">
-        <label for="inputUsername">Username</label>
-        <input name='username' type="text" class="form-control" placeholder="Username" required>
+    <div class="row form">
+        <form action='/login' method='post'>
+            <div class="form-group">
+                <label for="inputUsername">Username</label>
+                <input name='username' type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input name='password' type="password" class="form-control" placeholder="Password" required>
+            </div>
+
+            <button name='log-in' type="submit" class="btn btn-primary ">Log In</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="inputPassword">Password</label>
-        <input name='password' type="password" class="form-control" placeholder="Password" required>
-    </div>
-      
-   <button name='log-in' type="submit" class="btn btn-primary">Log In</button>
 </div>
