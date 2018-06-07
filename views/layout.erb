@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Rumblr</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='/styles.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
 </head>
@@ -31,7 +32,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/logout">Log Out</a>
                         </li>
-           
+
+                        <form action="/search" method="post" class='search'>
+                            
+                                <input type="search" name="search" id="search" placeholder="e.g. #word or @word">
+                                <label class="label-icon" for="search"><button type="submit"><i class="fa fa-search"></i></button></label>
+                           
+                        </form>
+
                     <% end %>
                     
                 </ul>

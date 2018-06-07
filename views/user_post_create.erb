@@ -1,7 +1,12 @@
-<div class="container">
-    <p> Create your post</p>
+<div class="container create-container">
+    <div class='row action'>
+        <div class="col-12 ">
+            <p> Create your post</p> 
+        </div>
+    </div>
+    
 
-    <form action='/user_post_create' method='post' id='new_post'>
+    <form action='/user_post_create' method='post' class='new_post'>
         <div class="form-group">
             <label for="inputPostName">Post Name</label>
             <input name='post_name' type="text" class="form-control" placeholder="Post name">
