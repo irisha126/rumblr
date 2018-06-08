@@ -36,7 +36,7 @@ post ('/signup') do
     )
     session[:user_id] = @user.id
 
-    redirect('/')
+    redirect('/user_page_feed')
 end
 
 get ('/login') do

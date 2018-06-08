@@ -6,6 +6,6 @@
     <p>By <%= User.find(post.user_id).username %></p>
     <p>Posted at <%= post.created_at %></p>
     <p>Updated at <%= post.updated_at %></p>
-<a href="/update_post/<%= post.id %>" class='btn'>Update Post</a><br>
-<% end %>
+    <a href="/update_post/<%= post.id %>" class='btn'>Update Post</a><br>
+    <% end %>
 </div>
