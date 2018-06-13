@@ -16,4 +16,4 @@
 * User has ability to see most recent posts by all users once logged in
 
 ## Screenshot
-![screenshot](../public/images/Screen Shot 2018-06-12 at 2.48.39 PM.png)
+![screenshot](/public/images/Screen Shot 2018-06-12 at 2.48.39 PM.png)
