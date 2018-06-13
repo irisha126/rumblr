@@ -1,11 +1,13 @@
 
 <div class="container">
-   <% @my_posts.each do |post| %>
-    <p>Title: <%= post.title %></p>
-    <p><%= post.post %> </p>
-    <p>By <%= User.find(post.user_id).username %></p>
-    <p>Posted at <%= post.created_at %></p>
-    <p>Updated at <%= post.updated_at %></p>
-    <a href="/update_post/<%= post.id %>" class='btn'>Update Post</a><br>
+    <% @my_posts.each do |post| %>
+        <p>By <%= User.find(post.user_id).username %></p>
+        <p class = 'title'>Title: <%= post.title %></p>
+        <div class='post'>
+            <p class = 'post-text'><%= post.post %></p>
+            <p class = 'posted'>Posted at <%= post.created_at %></p>
+            <p class = 'updated'>Updated at <%= post.updated_at %></p>
+            <a href="/update_post/<%= post.id %>" class='btn'>Update Post</a><br>
+        </div>
     <% end %>
 </div>

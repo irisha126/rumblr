@@ -149,3 +149,8 @@ get ('/profile/delete_user/:id') do
     flash[:warning] = "Your profile has been deleted."
     redirect('/')
 end
+
+get ('/500') do
+
+    erb(:error, layout: false)  
+end
