@@ -20,12 +20,13 @@ end
 
 
 get('/signup')do
-#    @user = User.find(session[:user_id])
     erb(:signup) 
 end
 
 
 post ('/signup') do
+    # should check if a user exists with a given email before creating. 
+    # Let me know if you want me to explain what this is.
     @user = User.create(
         username: params[:username],
         password: params[:password],
@@ -51,30 +52,33 @@ post ('/login') do
     if user.nil?
         flash[:warning] = "User does not exist. Please create an account"
         redirect '/login'
-    elsif 
-    unless user && user.password == params[:password]
-      flash[:warning] = "Username or password is incorrect."
-      redirect '/login'
+    elsif # what is checking?? elsif what?
+        unless user && user.password == params[:password]
+          flash[:warning] = "Username or password is incorrect."
+          redirect '/login'
+        end
     end
-  end
     session[:user_id] = user.id
     redirect('/user_page_feed')
 end
 
 
-get ('/profile/:id') do    
+get ('/profile/:id') do
+    # should check if a user is logged in  
     @user = User.find(session[:user_id]) if session[:user_id]
 
     erb(:profile)
 end
 
 get ('/profile/update/:id') do
+    # should check if a user is logged in
     @user = User.find(session[:user_id]) if session[:user_id]
     erb(:profile_update)
 end
 
 
 post ('/profile/update/:id') do 
+    # should check if a user is logged in
     user = User.find(session[:user_id]) 
     user_new = user.update(
         username: params[:username],
@@ -89,6 +93,7 @@ end
 
 
 get ('/user_post_create') do
+    # should check if a user is logged in
     @user = User.find(session[:user_id]) if session[:user_id]
     erb(:user_post_create)
 end
@@ -151,6 +156,6 @@ get ('/profile/delete_user/:id') do
 end
 
 get ('/500') do
-
+    # good job with this 500 page
     erb(:error, layout: false)  
 end

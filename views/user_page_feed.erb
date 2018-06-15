@@ -2,6 +2,7 @@
 <div class="container">
     <h1> Recent stories</h1><br>
     <% @posts.each do |post| %>
+        <!-- you fetch the user from the post (post.user.username) instead of doing User.find -->
         <p>By <%= User.find(post.user_id).username %></p>
         <p class='title'><strong><%= post.title %></strong></p>
         <div class='post'>
